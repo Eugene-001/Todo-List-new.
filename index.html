@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO List.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <div class="main-body bg-gray-100 min-h-screen flex items-center justify-center">
+        <div class="todo-container bg-gray-200 border-1 rounded-lg p-10">
+            <div class="header-section flex items-center gap-40 bg-white p-6 rounded-lg">
+                <div class="text flex flex-col">
+                    <div class="top-text font-bold text-lg mb-1">
+                        Here is your List.
+                    </div>
+                    <div class="bottom-text">
+                        Add or remove items from your list.
+                    </div>
+                </div>
+
+                <div class="icon text-4xl">
+                    📋
+                </div>
+            </div>
+
+            <div class="to-do-items">
+                <div class="item flex justify-between py-8 pl-5 pr-6 bg-white rounded-lg mt-6">
+                    <div class="left flex gap-2">
+                        <div class="icon">
+                            <img src="1.svg" alt="">
+                        </div>
+
+                        <div class="text">
+                            Make plans for dinner
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <img src="2.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="item flex justify-between py-8 pl-5 pr-6 bg-white rounded-lg mt-6">
+                    <div class="left flex gap-2">
+                        <div class="icon">
+                            <img src="3.svg" alt="">
+                        </div>
+
+                        <div class="text line-through">
+                            Study Tonight
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <img src="2.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="item flex justify-between py-8 pl-5 pr-6 bg-white rounded-lg mt-6">
+                    <div class="left flex gap-2">
+                        <div class="icon">
+                            <img src="3.svg" alt="">
+                        </div>
+
+                        <div class="text line-through">
+                            Choir Practice
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <img src="2.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="item flex justify-between py-8 pl-5 pr-6 bg-white rounded-lg mt-6">
+                    <div class="left flex gap-2">
+                        <div class="icon">
+                            <img src="3.svg" alt="">
+                        </div>
+
+                        <div class="text line-through">
+                            Manga Time..
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <img src="2.svg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area flex items-center gap-4 bg-white mt-6 rounded-lg px-6 py-4">
+                <div class="input-div flex-1">
+                    <input type="text" placeholder="Add a new item" class="border-none outline-none w-full">
+                </div>
+
+               <button class="button bg-rose-400 text-white px-6 py-3 rounded-lg whitespace-nowrap">Add to List</button>
+            </div>
+        </div> 
+   </div>
+</body>
+</html>
