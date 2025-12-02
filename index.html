@@ -27,7 +27,7 @@
             <div class="to-do-items">
                 <div class="item flex justify-between py-8 pl-5 pr-6 bg-white rounded-lg mt-6">
                     <div class="left flex gap-2">
-                        <div class="icon">
+                        <div class="icon cursor-pointer" onclick="this.parentElement.querySelector('.text').classList.toggle('line-through'); const img = this.querySelector('img'); img.src = img.src.includes('1.svg') ? '3.svg' : '1.svg';">
                             <img src="1.svg" alt="">
                         </div>
 
@@ -36,14 +36,14 @@
                         </div>
                     </div>
 
-                    <div class="right">
+                    <div class="right cursor-pointer" onclick="this.parentElement.remove()">
                         <img src="2.svg" alt="">
                     </div>
                 </div>
 
                 <div class="item flex justify-between py-8 pl-5 pr-6 bg-white rounded-lg mt-6">
                     <div class="left flex gap-2">
-                        <div class="icon">
+                        <div class="icon cursor-pointer" onclick="this.parentElement.querySelector('.text').classList.toggle('line-through'); const img = this.querySelector('img'); img.src = img.src.includes('1.svg') ? '3.svg' : '1.svg';">
                             <img src="3.svg" alt="">
                         </div>
 
@@ -52,14 +52,14 @@
                         </div>
                     </div>
 
-                    <div class="right">
+                    <div class="right cursor-pointer" onclick="this.parentElement.remove()">
                         <img src="2.svg" alt="">
                     </div>
                 </div>
 
                 <div class="item flex justify-between py-8 pl-5 pr-6 bg-white rounded-lg mt-6">
                     <div class="left flex gap-2">
-                        <div class="icon">
+                        <div class="icon cursor-pointer" onclick="this.parentElement.querySelector('.text').classList.toggle('line-through'); const img = this.querySelector('img'); img.src = img.src.includes('1.svg') ? '3.svg' : '1.svg';">
                             <img src="3.svg" alt="">
                         </div>
 
@@ -68,14 +68,14 @@
                         </div>
                     </div>
 
-                    <div class="right">
+                    <div class="right cursor-pointer" onclick="this.parentElement.remove()">
                         <img src="2.svg" alt="">
                     </div>
                 </div>
 
                 <div class="item flex justify-between py-8 pl-5 pr-6 bg-white rounded-lg mt-6">
                     <div class="left flex gap-2">
-                        <div class="icon">
+                        <div class="icon cursor-pointer" onclick="this.parentElement.querySelector('.text').classList.toggle('line-through'); const img = this.querySelector('img'); img.src = img.src.includes('1.svg') ? '3.svg' : '1.svg';">
                             <img src="3.svg" alt="">
                         </div>
 
@@ -84,7 +84,7 @@
                         </div>
                     </div>
 
-                    <div class="right">
+                    <div class="right cursor-pointer" onclick="this.parentElement.remove()">
                         <img src="2.svg" alt="">
                     </div>
                 </div>
@@ -95,9 +95,51 @@
                     <input type="text" placeholder="Add a new item" class="border-none outline-none w-full">
                 </div>
 
-               <button class="button bg-rose-400 text-white px-6 py-3 rounded-lg whitespace-nowrap">Add to List</button>
+               <button onclick="addTask()" class="button bg-rose-400 text-white px-6 py-3 rounded-lg whitespace-nowrap">Add to List</button>
             </div>
         </div> 
    </div>
+
+
+   <script>
+
+    const inputBox = document.querySelector(".input-div input");
+    const todoList = document.querySelector(".to-do-items");
+    const addButton = document.querySelector(".button");
+
+    function addTask() {
+        if (inputBox.value.trim() === "") {
+            alert("You must write something!");
+        } else {
+            let item = document.createElement("div");
+            item.classList.add("item", "flex", "justify-between", "py-8", "pl-5", "pr-6", "bg-white", "rounded-lg", "mt-6");
+            item.innerHTML = `
+
+            <div class= "left flex gap-2"> 
+                
+                <div class="icon cursor-pointer" onclick="this.parentElement.querySelector('.text').classList.toggle('line-through'); const img = this.querySelector('img'); img.src = img.src.includes('1.svg') ? '3.svg' : '1.svg';">
+                    <img src="1.svg" alt="">
+                </div>
+
+                <div class="text">
+                ${inputBox.value}
+                </div>
+                
+            </div>
+
+            <div class="right" onclick="this.parentElement.remove()">
+                <img src="2.svg" alt="">
+            </div>
+            
+            `;
+            todoList.appendChild(item);
+            inputBox.value = "";
+        }
+    }
+
+
+
+    
+   </script>
 </body>
 </html>
